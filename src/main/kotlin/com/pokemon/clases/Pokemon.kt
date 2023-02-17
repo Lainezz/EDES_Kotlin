@@ -14,13 +14,13 @@ class Pokemon(id: Int, nombre: String, vida: Int, tipo: String) {
 
     var vida: Int = 0
 
-    var tipo: String = ""
+    var tipo: Tipo
 
     init {
         this.id = id;
         this.nombre = nombre;
         this.vida = vida;
-        this.tipo = tipo
+        this.tipo = Tipo(tipo)
     }
 
     override fun toString(): String {

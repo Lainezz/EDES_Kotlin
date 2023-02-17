@@ -4,7 +4,7 @@ class Ataque(nombre: String, tipo: String, fuerza: Int) {
 
     var nombre: String = nombre
 
-    var tipo: String = tipo
+    var tipo: Tipo
 
     var fuerza: Int = fuerza
         set(value) {
@@ -15,8 +15,8 @@ class Ataque(nombre: String, tipo: String, fuerza: Int) {
 
     init {
         this.nombre = nombre
-        this.tipo = tipo
         this.fuerza = fuerza
+        this.tipo = Tipo(tipo)
     }
 
     // RAMAS
