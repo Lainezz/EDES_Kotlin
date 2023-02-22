@@ -2,7 +2,7 @@ package com.pokemon.clases
 
 class Tipo(tipo: String) {
 
-    var tipo: String;
+    val tipo: String;
 
     init {
         if(tipo.isEmpty()){
