@@ -25,6 +25,6 @@ class Tipo(tipo: String) {
     }
 
     override fun toString(): String {
-        return tipo.uppercase()
+        return "Tipo del pokemon: $tipo"
     }
 }
