@@ -23,4 +23,8 @@ class Tipo(tipo: String) {
             return tiposAceptados;
         }
     }
+
+    override fun toString(): String {
+        return "Tipo del pokemon: $tipo"
+    }
 }
