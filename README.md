@@ -19,22 +19,22 @@ JOSE MANUEL
 * @param lancha - Objeto de tipo barco que debe ser una lancha
 */
 
-private void colocarL(Barco lancha) {
-	Random rand = new Random();
+private void colocarL(Barco lancha) 
+{
+Random rand = new Random();
+int x;
+int y;
 
-	int x;
-	int y;
+boolean colocado = false;
+while (!colocado) {
+	x = rand.nextInt(9);
+	y = rand.nextInt(9);
 
-	boolean colocado = false;
-	while (!colocado) {
-		x = rand.nextInt(9);
-		y = rand.nextInt(9);
-
-		if (comprobarSiLibre(x, y)) {
-			this.tablero[x][y] = lancha.getIni();
-			colocado = true;
-		}
+	if (comprobarSiLibre(x, y)) {
+		this.tablero[x][y] = lancha.getIni();
+		colocado = true;
 	}
+}
 }
 
 ELOY
