@@ -44,9 +44,9 @@ ELOY
 * @param barco
 */
 
-private void colocarHorizontal(Barco barco) {
-	Random rand = new Random();
 
+	private void colocarHorizontal(Barco barco) {
+	Random rand = new Random();
 	int x, auxX;
 	int y, auxY;
 
@@ -90,7 +90,7 @@ private void colocarHorizontal(Barco barco) {
 		}
 	}
 	System.out.flush();
-}
+	}
 
 PROFESOR
 /**
