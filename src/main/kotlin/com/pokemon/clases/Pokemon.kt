@@ -26,4 +26,5 @@ class Pokemon(id: Int, nombre: String, vida: Int, tipo: String) {
     override fun toString(): String {
         return "Hola mi nombre es $nombre, tengo $vida de vida y soy de tipo $tipo"
     }
+
 }
