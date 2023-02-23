@@ -13,10 +13,12 @@ Van a consistir en 2 sprints.
 1er Sprint. Cada alumno debe implementar en Kotlin lo que se le asigna
 
 JOSE MANUEL
+
 /**
 * Coloca una lancha dentro del tablero de juego
 * @param lancha - Objeto de tipo barco que debe ser una lancha
 */
+
 private void colocarL(Barco lancha) {
 	Random rand = new Random();
 
@@ -36,10 +38,12 @@ private void colocarL(Barco lancha) {
 }
 
 ELOY
+
 /**
 * Método que recibe por parámetros un objeto de tipo barco y lo coloca horizontalmente en el tablero
 * @param barco
 */
+
 private void colocarHorizontal(Barco barco) {
 	Random rand = new Random();
 
