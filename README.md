@@ -1,4 +1,4 @@
-	/*
+    /*
     PROYECTO HUNDIR LA FLOTA
 
     Somos un equipo, y nos han encomendado realizar un proyecto, hundir la flota.
@@ -15,6 +15,7 @@
     /*
     TODO: JOSE MANUEL
      */
+     ```
     /**
      * Coloca una lancha dentro del tablero de juego
      * @param lancha - Objeto de tipo barco que debe ser una lancha
@@ -36,7 +37,7 @@
             }
         }
     }
-
+    ```
 
     /*
     TODO: ELOY
