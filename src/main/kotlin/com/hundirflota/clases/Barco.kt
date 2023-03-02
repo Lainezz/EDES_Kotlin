@@ -2,7 +2,6 @@ package com.hundirflota.clases
 
 class Barco(nombre: String, ini: Char, tamanio: Int) {
 
-
     fun getIni(): Char {
         return ini
     }
@@ -45,6 +44,12 @@ class Barco(nombre: String, ini: Char, tamanio: Int) {
             }
 
             else -> throw IllegalArgumentException("Unexpected value: $ini")
+    private fun colocarBarco(barco : Barco){
+        when(barco.ini){
+            "L"->colocarL(barco)
+            "B","Z"->colocarHorizontal(barco)
+            "P"->colocarVertical(barco)
+            else-> imprimirError("Barco erróneo")
         }
     }
 }
