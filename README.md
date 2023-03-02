@@ -318,6 +318,69 @@
         setPosicionesBarcos(0);
         llenarTableroVacio();
     }
+
+    /*
+    TODO: ALEJANDRO
+    */
+    public static void cabecera() {
+        System.out.print("____________________________________________\n");
+        System.out.print("______________HUNDIR LA FLOTA_______________\n");
+        System.out.flush();
+    }
+
+	public static void menuPpal() {
+		System.out.print(
+				"___________Elija dificultad (1 - 4)_________\n"
+				+ "____________________________________________\n"
+				+ "1. Nivel f�cil\n" + "2. Nivel medio\n"
+				+ "3. Nivel dif�cil\n"
+				+ "4. Nivel personalizado\n"
+				+ "\n"
+				+ "0. Salir\n");
+		System.out.flush();
+	}
+
+	public static void errorSeleccion() {
+		System.err.print(
+				"************\n"
+				+ "Error en la elecci�n de la dificultad.\n"
+				+ "Por favor, elija una opci�n v�lida.\n"
+				+ "************\n");
+	}
+
+	public static void despedida() {
+		System.out.print("Nus vemos!\n");
+		System.out.flush();
+	}
+
+	public static void comienzoJuego() {
+		try {
+			System.out.print("\n\nComienza el juego en 3");
+			Thread.sleep(300);System.out.print(".");
+			Thread.sleep(300);System.out.print(".");
+			Thread.sleep(300);System.out.print(".");
+			Thread.sleep(300);System.out.print("2");
+			Thread.sleep(300);System.out.print(".");
+			Thread.sleep(300);System.out.print(".");
+			Thread.sleep(300);System.out.print(".");
+			Thread.sleep(300);System.out.print("1");
+			Thread.sleep(300);System.out.print(".");
+			Thread.sleep(300);System.out.print(".");
+			Thread.sleep(300);System.out.print(".");
+			Thread.sleep(300);System.out.print("Go!");
+			Thread.sleep(500);
+			for (int i = 0; i < 50; ++i) System.out.println();
+			System.out.flush();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public static void errorPosicion() {
+		System.err.println("Error, indique una opcion v�lida");
+	}
+
     /************************************************
     ***********FIN CLASE TABLERO******************
     ************************************************/
