@@ -13,7 +13,7 @@
     */
 
     /*
-    TODO: JOSE MANUEL
+    TODO: DANIEL
      */
      ```
     /**
@@ -95,7 +95,7 @@
     }
 
     /*
-    TODO: PROFESOR
+    TODO: JOSE MANUEL
      */
     /**
      * Metodo que coloca un barco verticalmente
