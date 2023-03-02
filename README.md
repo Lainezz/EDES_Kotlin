@@ -7,7 +7,7 @@
 
     Van a consistir en 2 sprints.
     1er Sprint, crear la clase tablero de juego y la clase barco.
-    2o sprint, crear la clase Barco y la clase principal.
+    2o sprint, crear la clase principal.
     */
     
     
