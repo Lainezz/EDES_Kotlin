@@ -1,8 +1,7 @@
 import java.util.*
 
 fun main() {
-    @JvmStatic
-    fun main(args: Array<String>) {
+
         var nLanchas = 0
         var nBuques = 0
         var nAcorazados = 0
@@ -219,4 +218,3 @@ fun main() {
     fun errorPosicion() {
         System.err.println("Error, indique una opcion v�lida")
     }
-}

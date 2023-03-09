@@ -4,7 +4,7 @@ class Tablero {
 
     private val NFILAS = 10
     private val NCOLS = 10
-    private val guion:Char =45
+    private val guion:Char = 45
     private val arroba:Char = 64
     private val posicionesBarcos = 0
     var tablero: Array<Array<Char>> = arrayOf()
@@ -358,8 +358,9 @@ class Tablero {
     fun colocarBarco(barco: Barco){
         when(barco.getIni()){
             'L'->colocarL(barco)
-            'B' || 'Z'-> colocarHorizontal(barco)
-            'P'-> colocarVertical(barco)
+            'B' -> colocarHorizontal(barco)
+            'Z'-> colocarHorizontal(barco)
+            'P' -> colocarVertical(barco)
             else->throw imprimirError("Barco erróneo")
         }
     }
