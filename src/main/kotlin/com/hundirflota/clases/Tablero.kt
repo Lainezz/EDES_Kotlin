@@ -7,6 +7,7 @@ class Tablero {
     private val guion:Char =45
     private val arroba:Char = 64
     private val posicionesBarcos = 0
+    var tablero: Array<Array<Char>> = arrayOf()
     fun Tablero() {
         this.tablero = Array<CharArray>(NFILAS) { CharArray(NCOLS) }
         setPosicionesBarcos(0)
