@@ -326,19 +326,18 @@ class Tablero {
      * @throws Exception Excepción genérica que se lanza al producirse un error
      * @see Barco
      */
-    /*private void imprimirError(String mensaje) throws Exception {
-        System.err.format("ERROR: %s", mensaje);
-        throw new Exception(mensaje);
+
+    @Throws(Exception::class)
+    private fun imprimirError(mensaje: String) {
+        System.err.format("ERROR: %s", mensaje)
+        throw Exception(mensaje)
     }
 
-    public int getPosicionesBarcos() {
-        return posicionesBarcos;
-    }
-
-    public void setPosicionesBarcos(int posicionesBarcos) {
-        this.posicionesBarcos = posicionesBarcos;
-    }*/
-
+            var posicionesBarcos: Int = 0
+            get() = field
+            set(value) {
+                field = value
+            }
 
 
     /*
