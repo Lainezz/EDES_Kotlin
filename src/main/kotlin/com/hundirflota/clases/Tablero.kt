@@ -2,48 +2,16 @@ package com.hundirflota.clases
 
 class Tablero {
 
-
-    /*
-    TODO: ALEJANDRO
-     */
-    /**
-     * Numero de filas del tablero. Hardcodeado a 10.
-     */
-    /*private final int NFILAS = 10;
-
-    /**
-     * Numero de columnas del tablero. Hardcodeado a 10.
-     */
-    private final int NCOLS = 10;
-
-    /**
-     * Guion - Correspondiente a una casilla con agua, no disparada aún
-     */
-    private final char guion = (char) 45;
-
-    /**
-     * Arroba - Correspondiente a una casilla donde se ha disparado y no ha tocado ningún barco
-     */
-    private final char arroba = (char) 64;
-
-    /**
-     * Numero de posiciones totales que ocupan los barcos en el tablero
-     */
-    private int posicionesBarcos;
-
-    char[][] tablero;
-
-    /**
-     * Constructor por defecto. Crea un tablero de NFILAS y NCOLUMNAS
-     * Setea las posiciones de barcos y llena el tablero vacío.
-     * @see #posicionesBarcos
-     */
-    public Tablero() {
-        this.tablero = new char[NFILAS][NCOLS];
-        setPosicionesBarcos(0);
-        llenarTableroVacio();
-    }*/
-
+    private val NFILAS = 10
+    private val NCOLS = 10
+    private val guion:Char =45
+    private val arroba:Char = 64
+    private val posicionesBarcos = 0
+    fun Tablero() {
+        this.tablero = Array<CharArray>(NFILAS) { CharArray(NCOLS) }
+        setPosicionesBarcos(0)
+        llenarTableroVacio()
+    }
 
 
     /*
@@ -343,8 +311,14 @@ class Tablero {
             imprimirError("Barco erróneo");
         }
     }*/
-
-
+    fun colocarBarco(Barco: barco){
+        when(barco.getIni()){
+            'L'->colocarL(barco)
+            'B' || 'Z'-> colocarHorizontal(barco)
+            'P'-> colocarVertical(barco)
+            else->throw imprimirError("Barco erróneo")
+        }
+    }
     /*
     TODO: ALVARO
      */
@@ -354,19 +328,18 @@ class Tablero {
      * @throws Exception Excepción genérica que se lanza al producirse un error
      * @see Barco
      */
-    /*private void imprimirError(String mensaje) throws Exception {
-        System.err.format("ERROR: %s", mensaje);
-        throw new Exception(mensaje);
+
+    @Throws(Exception::class)
+    private fun imprimirError(mensaje: String) {
+        System.err.format("ERROR: %s", mensaje)
+        throw Exception(mensaje)
     }
 
-    public int getPosicionesBarcos() {
-        return posicionesBarcos;
-    }
-
-    public void setPosicionesBarcos(int posicionesBarcos) {
-        this.posicionesBarcos = posicionesBarcos;
-    }*/
-
+            var posicionesBarcos: Int = 0
+            get() = field
+            set(value) {
+                field = value
+            }
 
 
     /*

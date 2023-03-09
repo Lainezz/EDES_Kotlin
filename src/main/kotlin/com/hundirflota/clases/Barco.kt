@@ -6,68 +6,59 @@ class Barco {
     /*
     TODO: SARA
      */
-    /*public char getIni() {
-        return ini;
+    open fun getIni(): Char {
+        return ini
     }
 
-    public void setIni(char ini) throws IllegalArgumentException{
-        for (char c : listaAdmitidos) {
-            if(c == ini) {
-                this.ini = ini;
-                break;
+    @kotlin.Throws(IllegalArgumentException::class)
+    fun setIni(ini: Char) {
+        for (c in listaAdmitidos) {
+            if (c == ini) {
+                ini = ini
+                break
             }
         }
-        if(this.ini != ini) throw new IllegalArgumentException("Inicial no admitida");
+        if (ini !== ini) throw IllegalArgumentException("Inicial no admitida")
 
         //Si se ha establecido la inicial correctamente, establecemos el nombre y el tamanio del Barco
-        setNombre(ini);
-        setTamanio(ini);
+        setNombre(ini)
+        setTamanio(ini)
     }
 
-    public int getTamanio() {
-        return tamanio;
+    fun getTamanio(): Int {
+        return tamanio
     }
 
-    private void setTamanio(char ini) {
-        switch (ini) {
-            case 'L': {
-            this.tamanio = 1;
-            break;
-        }
-            case 'B': {
-            this.tamanio = 3;
-            break;
-        }
-            case 'Z': {
-            this.tamanio = 4;
-            break;
-        }
-            case 'P': {
-            this.tamanio = 5;
-            break;
-        }
-            default:
-            throw new IllegalArgumentException("Unexpected value: " + ini);
-        }
-    }*/
+    private fun setTamanio(ini: Char) {
+        when (ini) {
+            'L' -> {
+                this.tamanio = 1
+            }
 
+            'B' -> {
+                this.tamanio = 3
+            }
+
+            'Z' -> {
+                this.tamanio = 4
+            }
+
+            'P' -> {
+                this.tamanio = 5
+            }
+
+            else -> throw IllegalArgumentException("Unexpected value: $ini")
+        }
+    }
 
     /*
     TODO: PABLO
      */
-    /**
-     * Atributos de la clase Barco
-     */
-    /*private String nombre;
-    private char ini;
-    private int tamanio;
+    private var nombre: String = null
+    private var ini: Char = ' '
+    private var tamanio: Int = 0
 
-    /**
-     * Lista con las iniciales admitidas en el juego
-     */
-    private char[] listaAdmitidos = new char[]{'L','B','Z','P'};
-    */
-
+    private val listaAdmitidos = charArrayOf('L', 'B', 'Z', 'P')
 
     /*
     TODO: RUBEN
