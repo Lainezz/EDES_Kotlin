@@ -6,10 +6,13 @@ class Tablero {
     private val NCOLS = 10
     private val guion:Char = 45
     private val arroba:Char = 64
-    private val posicionesBarcos = 0
-    var tablero: Array<Char> = arrayOf()
-    fun Tablero() {
-        this.tablero = Array<Char>(NFILAS) { Char(NCOLS) }
+    private var posicionesBarcos = 0
+    var tablero: Array<Array<Char>> = arrayOf()
+
+    init {
+        this.tablero = Array(NFILAS) {
+            it->Array(NCOLS){ ' '}
+        }
         setPosicionesBarcos(0)
         llenarTableroVacio()
     }
@@ -130,8 +133,8 @@ class Tablero {
 
             //Si las posiciones están libres, colocamos el barco sin miedo
             if (libre){
-                for (i in 1..barco.getTamanio){
-                    this.tablero[x][y] = barco.getIni
+                for (i in 1..barco.getTamanio()){
+                    this.tablero[x][y] = barco.getIni()
                 }
                 colocado = true
             }
@@ -184,7 +187,7 @@ class Tablero {
                 //Si las posiciones están libres, colocamos el barco sin miedo
                 if (libre) {
                     for (i in 0 until barco.getTamanio()) {
-                        this.tablero.get(x).get(y) = barco.getIni()
+                        this.tablero[x][y]= barco.getIni()
                         x++
                     }
                     colocado = true
@@ -243,10 +246,10 @@ class Tablero {
         println()
 
         // Procedo a mostrar el contenido de mi tablero
-        for (i in 0 until tablero.length) {
+        for (i in 0 until tablero.size) {
             // Primero imprimo el numero de linea
             System.out.format("%2d", i + 1)
-            for (j in 0 until tablero.get(i).length) {
+            for (j in 0 until tablero.get(i).size) {
                 System.out.format("%2c", this.tablero.get(i).get(j))
             }
             // Al terminar la fila, imprimo un salto de línea
@@ -277,7 +280,7 @@ class Tablero {
         // hasta la longitud maxima establecida en el tablero.
         // Guion es una variable ya establecida.
         for (i in 0..this.tablero.size) {
-            for (j in 0..this.tablero[i].length) {
+            for (j in 0..this.tablero[i].size) {
                 this.tablero[i][j] = guion
             }
         }
@@ -329,7 +332,7 @@ class Tablero {
         this.tablero[x][y] = cosa;
     }*/
 
-    fun actualizarTablero(tablero: Array<Array<Char>>, x: Int, y: Int, cosa: Char) {
+    fun actualizarTablero(x: Int, y: Int, cosa: Char) {
         tablero[x][y] = cosa
     }
 
@@ -379,11 +382,17 @@ class Tablero {
         System.err.format("ERROR: %s", mensaje)
         throw Exception(mensaje)
     }
-            open fun getPosicionesBarcos(){
-            return posicionesBarcos}
+    fun getPosicionesBarcos() : Int{
+        return posicionesBarcos
+    }
 
-            open fun setPosicionesBarcos(posicionesBarcos:Int){
-            this.posicionesBarcos=posicionesBarcos}
+    fun setPosicionesBarcos(posicionesBarcos:Int){
+        this.posicionesBarcos=posicionesBarcos
+    }
+
+    fun comprobarSiLibre(x: Int, y: Int): Boolean{
+        return tablero[x][y] == arroba
+    }
 
 
 

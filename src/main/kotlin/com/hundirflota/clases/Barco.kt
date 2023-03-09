@@ -5,7 +5,7 @@ class Barco(ini: Char) {
     /*
     TODO: SARA
      */
-    open fun getIni(): Char {
+    fun getIni(): Char {
         return ini
     }
 
@@ -17,7 +17,7 @@ class Barco(ini: Char) {
                 break
             }
         }
-        if (ini !== ini) throw IllegalArgumentException("Inicial no admitida")
+        if (this.ini != ini) throw IllegalArgumentException("Inicial no admitida")
 
         //Si se ha establecido la inicial correctamente, establecemos el nombre y el tamanio del Barco
         setNombre(ini)
