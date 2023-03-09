@@ -98,7 +98,45 @@ class Tablero {
         System.out.flush();
     }*/
 
+    private fun colocarHorizontal(barco:Barco){
+        var colocado = false
+        var libre : Boolean
+        while (!colocado){
+            //Variable para controlar si las posiciones estan libres
+            libre = true
+            //Variables de posicion
+            var x = (0..9).random()
+            var y = (0..9).random()
 
+            //Ajustamos y para que no nos de excepcion
+            while (y+barco.getTamanio()>10){
+                y--
+            }
+
+            //Variables auxiliares que usaremos para comprobar si las posiciones estan libres
+            var auxX = x
+            var auxY = y
+
+            //Primero deberiamos comprobar si las posiciones para insertar el barco estan libres
+            for(i in 1..barco.getTamanio){
+                if (comprobarSiLibre(auxX, auxY)){
+                    //Como nos movemos horizontalmente, incrementamos Y
+                    auxY++
+                }else {
+                    libre = false
+                    break
+                }
+            }
+
+            //Si las posiciones están libres, colocamos el barco sin miedo
+            if (libre){
+                for (i in 1..barco.getTamanio){
+                    this.tablero[x][y] = barco.getIni
+                }
+                colocado = true
+            }
+        }
+    }
 
     /*
     TODO: JOSE MANUEL
@@ -234,14 +272,16 @@ class Tablero {
         }
     }*/
 
-    fun llenarTableroVacio(){
+    fun llenarTableroVacio() {
         //Funcion que llena el tablero con guiones segun el tamaño que tenga,empezando desde 0
         // hasta la longitud maxima establecida en el tablero.
         // Guion es una variable ya establecida.
-        for (i in 0 .. this.tablero.size){
-            for ( j in 0 .. this.tablero[i].length) {
-                this.tablero[i][j] = guion }
+        for (i in 0..this.tablero.size) {
+            for (j in 0..this.tablero[i].length) {
+                this.tablero[i][j] = guion
+            }
         }
+    }
 
     /*
     TODO: ESTHER
@@ -312,7 +352,7 @@ class Tablero {
             imprimirError("Barco erróneo");
         }
     }*/
-    fun colocarBarco(Barco: barco){
+    fun colocarBarco(barco: Barco){
         when(barco.getIni()){
             'L'->colocarL(barco)
             'B' || 'Z'-> colocarHorizontal(barco)
@@ -340,7 +380,7 @@ class Tablero {
 
             open fun setPosicionesBarcos(posicionesBarcos:Int){
             this.posicionesBarcos=posicionesBarcos}
-        }
+
 
 
     /*

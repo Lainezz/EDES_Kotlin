@@ -1,7 +1,6 @@
 package com.hundirflota.clases
 
-class Barco {
-
+class Barco(ini: Char) {
 
     /*
     TODO: SARA
@@ -14,7 +13,7 @@ class Barco {
     fun setIni(ini: Char) {
         for (c in listaAdmitidos) {
             if (c == ini) {
-                ini == ini
+                this.ini = ini
                 break
             }
         }
@@ -54,8 +53,10 @@ class Barco {
     /*
     TODO: PABLO
      */
-    private var nombre: String = ' '
+    private var nombre: String = ""
+
     private var ini: Char = ' '
+
     private var tamanio: Int = 0
 
     private val listaAdmitidos = charArrayOf('L', 'B', 'Z', 'P')
@@ -99,5 +100,29 @@ class Barco {
         }
     }
     */
+    init {
+        this.ini = ini
+    }
 
+    fun setNombre(ini: Char) {
+        when (ini) {
+            'L' -> {
+                nombre = "Lancha"
+            }
+
+            'B' -> {
+                nombre = "Buque"
+            }
+
+            'Z' -> {
+                nombre = "Acorazado"
+            }
+
+            'P' -> {
+                nombre = "Porta-Aviones"
+            }
+
+            else -> throw IllegalArgumentException("Unexpected value: $ini")
+        }
+    }
 }
