@@ -1,6 +1,8 @@
 package com.hundirflota.clases
 
 class Tablero {
+
+
     /*
     TODO: ALEJANDRO
      */
@@ -42,6 +44,8 @@ class Tablero {
         llenarTableroVacio();
     }*/
 
+
+
     /*
     TODO: DANIEL
      */
@@ -66,6 +70,8 @@ class Tablero {
             }
         }
     }*/
+
+
 
 
     /*
@@ -123,6 +129,8 @@ class Tablero {
         System.out.flush();
     }*/
 
+
+
     /*
     TODO: JOSE MANUEL
      */
@@ -177,6 +185,8 @@ class Tablero {
         System.out.flush();
     }*/
 
+
+
     /*
     TODO: PATRICIO
      */
@@ -210,6 +220,8 @@ class Tablero {
         System.out.flush();
     }*/
 
+
+
     /*
     TODO: DIEGO
      */
@@ -224,6 +236,8 @@ class Tablero {
         }
         }
     }*/
+
+
 
     /*
     TODO: ESTHER
@@ -248,6 +262,7 @@ class Tablero {
         }
     }*/
 
+
     /*
     TODO: JOSE ANTONIO
      */
@@ -260,6 +275,8 @@ class Tablero {
     /*public void updateTablero(int x, int y, char cosa) {
         this.tablero[x][y] = cosa;
     }*/
+
+
 
     /*
     TODO: FRANCISCO
@@ -282,6 +299,7 @@ class Tablero {
             imprimirError("Barco erróneo");
         }
     }*/
+
 
     /*
     TODO: ALVARO
