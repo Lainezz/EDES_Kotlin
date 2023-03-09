@@ -7,6 +7,7 @@ class Tablero {
     private val guion:Char = 45
     private val arroba:Char = 64
     private val posicionesBarcos = 0
+    var tablero: Array<Array<Char>> = arrayOf()
     fun Tablero() {
         this.tablero = Array<CharArray>(NFILAS) { CharArray(NCOLS) }
         setPosicionesBarcos(0)
@@ -117,7 +118,7 @@ class Tablero {
             var auxY = y
 
             //Primero deberiamos comprobar si las posiciones para insertar el barco estan libres
-            for(i in 1..barco.tamanio){
+            for(i in 1..barco.getTamanio){
                 if (comprobarSiLibre(auxX, auxY)){
                     //Como nos movemos horizontalmente, incrementamos Y
                     auxY++
@@ -129,8 +130,8 @@ class Tablero {
 
             //Si las posiciones están libres, colocamos el barco sin miedo
             if (libre){
-                for (i in 1..barco.tamanio){
-                    this.tablero[x][y] = barco.ini
+                for (i in 1..barco.getTamanio){
+                    this.tablero[x][y] = barco.getIni
                 }
                 colocado = true
             }
