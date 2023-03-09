@@ -55,19 +55,11 @@ class Barco {
     /*
     TODO: PABLO
      */
-    /**
-     * Atributos de la clase Barco
-     */
-    /*private String nombre;
-    private char ini;
-    private int tamanio;
+    private var nombre: String = null
+    private var ini: Char = ' '
+    private var tamanio: Int = 0
 
-    /**
-     * Lista con las iniciales admitidas en el juego
-     */
-    private char[] listaAdmitidos = new char[]{'L','B','Z','P'};
-    */
-
+    private val listaAdmitidos = charArrayOf('L', 'B', 'Z', 'P')
 
     /*
     TODO: RUBEN
