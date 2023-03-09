@@ -2,48 +2,16 @@ package com.hundirflota.clases
 
 class Tablero {
 
-
-    /*
-    TODO: ALEJANDRO
-     */
-    /**
-     * Numero de filas del tablero. Hardcodeado a 10.
-     */
-    /*private final int NFILAS = 10;
-
-    /**
-     * Numero de columnas del tablero. Hardcodeado a 10.
-     */
-    private final int NCOLS = 10;
-
-    /**
-     * Guion - Correspondiente a una casilla con agua, no disparada aún
-     */
-    private final char guion = (char) 45;
-
-    /**
-     * Arroba - Correspondiente a una casilla donde se ha disparado y no ha tocado ningún barco
-     */
-    private final char arroba = (char) 64;
-
-    /**
-     * Numero de posiciones totales que ocupan los barcos en el tablero
-     */
-    private int posicionesBarcos;
-
-    char[][] tablero;
-
-    /**
-     * Constructor por defecto. Crea un tablero de NFILAS y NCOLUMNAS
-     * Setea las posiciones de barcos y llena el tablero vacío.
-     * @see #posicionesBarcos
-     */
-    public Tablero() {
-        this.tablero = new char[NFILAS][NCOLS];
-        setPosicionesBarcos(0);
-        llenarTableroVacio();
-    }*/
-
+    private val NFILAS = 10
+    private val NCOLS = 10
+    private val guion:Char =45
+    private val arroba:Char = 64
+    private val posicionesBarcos = 0
+    fun Tablero() {
+        this.tablero = Array<CharArray>(NFILAS) { CharArray(NCOLS) }
+        setPosicionesBarcos(0)
+        llenarTableroVacio()
+    }
 
 
     /*
