@@ -54,7 +54,7 @@ class Barco {
     /*
     TODO: PABLO
      */
-    private var nombre: String = null
+    private var nombre: String = ' '
     private var ini: Char = ' '
     private var tamanio: Int = 0
 
