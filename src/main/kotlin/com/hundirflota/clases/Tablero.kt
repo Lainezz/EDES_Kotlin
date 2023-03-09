@@ -237,7 +237,12 @@ class Tablero {
         }
     }*/
 
+    fun llenarTableroVacio(){
 
+        for (i in 0 .. this.tablero.size){
+            for ( j in 0 .. this.tablero[i].length) {
+                this.tablero[i][j] = guion }
+        }
 
     /*
     TODO: ESTHER
