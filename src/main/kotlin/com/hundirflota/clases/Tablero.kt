@@ -1,17 +1,19 @@
 package com.hundirflota.clases
 
+import java.util.*
+
 class Tablero {
 
     private val NFILAS = 10
     private val NCOLS = 10
-    private val guion:Char = 45
-    private val arroba:Char = 64
+    private val guion: Char = 45.toChar()
+    private val arroba: Char = 64.toChar()
     private var posicionesBarcos = 0
     var tablero: Array<Array<Char>> = arrayOf()
 
     init {
-        this.tablero = Array(NFILAS) {
-            it->Array(NCOLS){ ' '}
+        this.tablero = Array(NFILAS) { it ->
+            Array(NCOLS) { ' ' }
         }
         setPosicionesBarcos(0)
         llenarTableroVacio()
@@ -42,9 +44,20 @@ class Tablero {
             }
         }
     }*/
-
-
-
+    fun colocarL(lancha: Barco) {
+        val rand = Random()
+        var x: Int
+        var y: Int
+        var colocado = false
+        while (!colocado) {
+            x = rand.nextInt(9)
+            y = rand.nextInt(9)
+            if (comprobarSiLibre(x, y)) {
+                tablero[x][y] = lancha.getIni()
+                colocado = true
+            }
+        }
+    }
 
     /*
     TODO: ELOY
@@ -101,10 +114,10 @@ class Tablero {
         System.out.flush();
     }*/
 
-    private fun colocarHorizontal(barco:Barco){
+    private fun colocarHorizontal(barco: Barco) {
         var colocado = false
-        var libre : Boolean
-        while (!colocado){
+        var libre: Boolean
+        while (!colocado) {
             //Variable para controlar si las posiciones estan libres
             libre = true
             //Variables de posicion
@@ -112,7 +125,7 @@ class Tablero {
             var y = (0..9).random()
 
             //Ajustamos y para que no nos de excepcion
-            while (y+barco.getTamanio()>10){
+            while (y + barco.getTamanio() > 10) {
                 y--
             }
 
@@ -121,19 +134,19 @@ class Tablero {
             var auxY = y
 
             //Primero deberiamos comprobar si las posiciones para insertar el barco estan libres
-            for(i in 1..barco.getTamanio){
-                if (comprobarSiLibre(auxX, auxY)){
+            for (i in 1..barco.getTamanio()) {
+                if (comprobarSiLibre(auxX, auxY)) {
                     //Como nos movemos horizontalmente, incrementamos Y
                     auxY++
-                }else {
+                } else {
                     libre = false
                     break
                 }
             }
 
             //Si las posiciones están libres, colocamos el barco sin miedo
-            if (libre){
-                for (i in 1..barco.getTamanio()){
+            if (libre) {
+                for (i in 1..barco.getTamanio()) {
                     this.tablero[x][y] = barco.getIni()
                 }
                 colocado = true
@@ -147,55 +160,53 @@ class Tablero {
     /**
      * Metodo que coloca un barco verticalmente
      */
-        private fun colocarVertical(barco: Barco) {
-            var rand = (0..10).random()
-            var x: Int
-            var auxX: Int
-            var y: Int
-            var auxY: Int
-            var colocado = false
-            var libre: Boolean
-            while (!colocado) {
-                //Variable para controlar si las posiciones estan libres
-                libre = true
+    private fun colocarVertical(barco: Barco) {
+        var rand = (0..10).random()
+        var x: Int
+        var auxX: Int
+        var y: Int
+        var auxY: Int
+        var colocado = false
+        var libre: Boolean
+        while (!colocado) {
+            //Variable para controlar si las posiciones estan libres
+            libre = true
 
-                //Variables de posicion
-                x = rand
-                rand = (0..10).random()
-                y = rand
+            //Variables de posicion
+            x = rand
+            rand = (0..10).random()
+            y = rand
 
-                //Ajustamos y para que no nos de excepcion
-                while (x + barco.getTamanio() > 10) {
-                    x--
-                }
+            //Ajustamos y para que no nos de excepcion
+            while (x + barco.getTamanio() > 10) {
+                x--
+            }
 
-                //Variables auxiliares que usaremos para comprobar si las posiciones estan libres
-                auxX = x
-                auxY = y
+            //Variables auxiliares que usaremos para comprobar si las posiciones estan libres
+            auxX = x
+            auxY = y
 
-                //Primero deberiamos comprobar si las posiciones para insertar el barco estan libres
-                for (i in 0 until barco.getTamanio()) {
-                    if (comprobarSiLibre(auxX, auxY)) {
-                        //Como nos movemos verticalmente, incrementamos X
-                        auxX++
-                    } else {
-                        libre = false
-                        break
-                    }
-                }
-
-                //Si las posiciones están libres, colocamos el barco sin miedo
-                if (libre) {
-                    for (i in 0 until barco.getTamanio()) {
-                        this.tablero[x][y]= barco.getIni()
-                        x++
-                    }
-                    colocado = true
+            //Primero deberiamos comprobar si las posiciones para insertar el barco estan libres
+            for (i in 0 until barco.getTamanio()) {
+                if (comprobarSiLibre(auxX, auxY)) {
+                    //Como nos movemos verticalmente, incrementamos X
+                    auxX++
+                } else {
+                    libre = false
+                    break
                 }
             }
+
+            //Si las posiciones están libres, colocamos el barco sin miedo
+            if (libre) {
+                for (i in 0 until barco.getTamanio()) {
+                    this.tablero[x][y] = barco.getIni()
+                    x++
+                }
+                colocado = true
+            }
         }
-
-
+    }
 
 
     /*
@@ -257,7 +268,6 @@ class Tablero {
         }
         System.out.flush()
     }
-
 
 
     /*
@@ -332,7 +342,7 @@ class Tablero {
         this.tablero[x][y] = cosa;
     }*/
 
-    fun actualizarTablero(x: Int, y: Int, cosa: Char) {
+    fun updateTablero(x: Int, y: Int, cosa: Char) {
         tablero[x][y] = cosa
     }
 
@@ -358,13 +368,13 @@ class Tablero {
             imprimirError("Barco erróneo");
         }
     }*/
-    fun colocarBarco(barco: Barco){
-        when(barco.getIni()){
-            'L'->colocarL(barco)
+    fun colocarBarco(barco: Barco) {
+        when (barco.getIni()) {
+            'L' -> colocarL(barco)
             'B' -> colocarHorizontal(barco)
-            'Z'-> colocarHorizontal(barco)
+            'Z' -> colocarHorizontal(barco)
             'P' -> colocarVertical(barco)
-            else->throw imprimirError("Barco erróneo")
+            else -> imprimirError("Barco erróneo")
         }
     }
     /*
@@ -382,18 +392,18 @@ class Tablero {
         System.err.format("ERROR: %s", mensaje)
         throw Exception(mensaje)
     }
-    fun getPosicionesBarcos() : Int{
+
+    fun getPosicionesBarcos(): Int {
         return posicionesBarcos
     }
 
-    fun setPosicionesBarcos(posicionesBarcos:Int){
-        this.posicionesBarcos=posicionesBarcos
+    fun setPosicionesBarcos(posicionesBarcos: Int) {
+        this.posicionesBarcos = posicionesBarcos
     }
 
-    fun comprobarSiLibre(x: Int, y: Int): Boolean{
+    fun comprobarSiLibre(x: Int, y: Int): Boolean {
         return tablero[x][y] == arroba
     }
-
 
 
     /*
