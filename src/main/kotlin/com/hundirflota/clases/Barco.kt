@@ -14,7 +14,7 @@ class Barco {
     fun setIni(ini: Char) {
         for (c in listaAdmitidos) {
             if (c == ini) {
-                ini = ini
+                ini == ini
                 break
             }
         }
