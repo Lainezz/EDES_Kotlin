@@ -354,7 +354,7 @@ class Tablero {
             imprimirError("Barco erróneo");
         }
     }*/
-    fun colocarBarco(Barco: barco){
+    fun colocarBarco(barco: Barco){
         when(barco.getIni()){
             'L'->colocarL(barco)
             'B' || 'Z'-> colocarHorizontal(barco)
