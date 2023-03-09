@@ -272,6 +272,8 @@ class Tablero {
         } else {
             println("Agua")
             return arroba
+        }
+    }
 
     /*
     TODO: JOSE ANTONIO
