@@ -97,7 +97,45 @@ class Tablero {
         System.out.flush();
     }*/
 
+    private fun colocarHorizontal(barco:Barco){
+        var colocado = false
+        var libre : Boolean
+        while (!colocado){
+            //Variable para controlar si las posiciones estan libres
+            libre = true
+            //Variables de posicion
+            var x = (0..9).random()
+            var y = (0..9).random()
 
+            //Ajustamos y para que no nos de excepcion
+            while (y+barco.getTamanio()>10){
+                y--
+            }
+
+            //Variables auxiliares que usaremos para comprobar si las posiciones estan libres
+            var auxX = x
+            var auxY = y
+
+            //Primero deberiamos comprobar si las posiciones para insertar el barco estan libres
+            for(i in 1..barco.tamanio){
+                if (comprobarSiLibre(auxX, auxY)){
+                    //Como nos movemos horizontalmente, incrementamos Y
+                    auxY++
+                }else {
+                    libre = false
+                    break
+                }
+            }
+
+            //Si las posiciones están libres, colocamos el barco sin miedo
+            if (libre){
+                for (i in 1..barco.tamanio){
+                    this.tablero[x][y] = barco.ini
+                }
+                colocado = true
+            }
+        }
+    }
 
     /*
     TODO: JOSE MANUEL
