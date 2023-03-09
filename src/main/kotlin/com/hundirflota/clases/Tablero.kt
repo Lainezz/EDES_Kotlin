@@ -329,6 +329,9 @@ class Tablero {
         this.tablero[x][y] = cosa;
     }*/
 
+    fun actualizarTablero(tablero: Array<Array<Char>>, x: Int, y: Int, cosa: Char) {
+        tablero[x][y] = cosa
+    }
 
 
     /*
