@@ -341,8 +341,14 @@ class Tablero {
             imprimirError("Barco erróneo");
         }
     }*/
-
-
+    fun colocarBarco(Barco: barco){
+        when(barco.getIni()){
+            'L'->colocarL(barco)
+            'B' || 'Z'-> colocarHorizontal(barco)
+            'P'-> colocarVertical(barco)
+            else->throw imprimirError("Barco erróneo")
+        }
+    }
     /*
     TODO: ALVARO
      */
