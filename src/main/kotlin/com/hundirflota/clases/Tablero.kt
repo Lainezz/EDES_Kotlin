@@ -233,14 +233,16 @@ class Tablero {
         }
     }*/
 
-    fun llenarTableroVacio(){
+    fun llenarTableroVacio() {
         //Funcion que llena el tablero con guiones segun el tamaño que tenga,empezando desde 0
         // hasta la longitud maxima establecida en el tablero.
         // Guion es una variable ya establecida.
-        for (i in 0 .. this.tablero.size){
-            for ( j in 0 .. this.tablero[i].length) {
-                this.tablero[i][j] = guion }
+        for (i in 0..this.tablero.size) {
+            for (j in 0..this.tablero[i].length) {
+                this.tablero[i][j] = guion
+            }
         }
+    }
 
     /*
     TODO: ESTHER
