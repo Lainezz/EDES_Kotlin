@@ -137,53 +137,54 @@ class Tablero {
     /**
      * Metodo que coloca un barco verticalmente
      */
-    /*private void colocarVertical(Barco barco) {
-        Random rand = new Random();
+        private fun colocarVertical(barco: Barco) {
+            var rand = (0..10).random()
+            var x: Int
+            var auxX: Int
+            var y: Int
+            var auxY: Int
+            var colocado = false
+            var libre: Boolean
+            while (!colocado) {
+                //Variable para controlar si las posiciones estan libres
+                libre = true
 
-        int x, auxX;
-        int y, auxY;
+                //Variables de posicion
+                x = rand
+                rand = (0..10).random()
+                y = rand
 
-        boolean colocado = false;
-        boolean libre;
-        while (!colocado) {
-            //Variable para controlar si las posiciones estan libres
-            libre = true;
-
-            //Variables de posicion
-            x = rand.nextInt(9);
-            y = rand.nextInt(9);
-
-            //Ajustamos y para que no nos de excepcion
-            while(x+barco.getTamanio()>10) {
-                x--;
-            }
-
-            //Variables auxiliares que usaremos para comprobar si las posiciones estan libres
-            auxX = x;
-            auxY = y;
-
-            //Primero deberiamos comprobar si las posiciones para insertar el barco estan libres
-            for(int i=0; i<barco.getTamanio(); i++) {
-                if (comprobarSiLibre(auxX, auxY)) {
-                    //Como nos movemos verticalmente, incrementamos X
-                    auxX++;
-                } else {
-                    libre = false;
-                    break;
+                //Ajustamos y para que no nos de excepcion
+                while (x + barco.getTamanio() > 10) {
+                    x--
                 }
-            }
 
-            //Si las posiciones están libres, colocamos el barco sin miedo
-            if(libre) {
-                for(int i=0; i<barco.getTamanio(); i++) {
-                    this.tablero[x][y] = barco.getIni();
-                    x++;
+                //Variables auxiliares que usaremos para comprobar si las posiciones estan libres
+                auxX = x
+                auxY = y
+
+                //Primero deberiamos comprobar si las posiciones para insertar el barco estan libres
+                for (i in 0 until barco.getTamanio()) {
+                    if (comprobarSiLibre(auxX, auxY)) {
+                        //Como nos movemos verticalmente, incrementamos X
+                        auxX++
+                    } else {
+                        libre = false
+                        break
+                    }
                 }
-                colocado = true;
+
+                //Si las posiciones están libres, colocamos el barco sin miedo
+                if (libre) {
+                    for (i in 0 until barco.getTamanio()) {
+                        this.tablero.get(x).get(y) = barco.getIni()
+                        x++
+                    }
+                    colocado = true
+                }
             }
         }
-        System.out.flush();
-    }*/
+
 
 
 
