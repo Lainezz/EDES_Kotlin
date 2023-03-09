@@ -332,12 +332,12 @@ class Tablero {
         System.err.format("ERROR: %s", mensaje)
         throw Exception(mensaje)
     }
+            open fun getPosicionesBarcos(){
+            return posicionesBarcos}
 
-            var posicionesBarcos: Int = 0
-            get() = field
-            set(value) {
-                field = value
-            }
+            open fun setPosicionesBarcos(posicionesBarcos:Int){
+            this.posicionesBarcos=posicionesBarcos}
+        }
 
 
     /*
