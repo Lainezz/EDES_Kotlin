@@ -341,7 +341,7 @@ class Tablero {
 
             open fun setPosicionesBarcos(posicionesBarcos:Int){
             this.posicionesBarcos=posicionesBarcos}
-        }
+
 
 
     /*

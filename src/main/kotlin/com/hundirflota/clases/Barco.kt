@@ -99,5 +99,37 @@ class Barco {
         }
     }
     */
+    class Barco(nombre: String, ini: Char, tamanio: Int) {
+        fun Barco(ini: Char) {
+            setIni(ini)
+        }
+
+        fun getNombre(): String {
+            return nombre
+        }
+
+        private fun setNombre(ini: Char) {
+            when (ini) {
+                "L" -> {
+                    this.nombre = "Lancha"
+                }
+
+                "B" -> {
+                    this.nombre = "Buque"
+                }
+
+                "Z" -> {
+                    this.nombre = "Acorazado"
+                }
+
+                "P" -> {
+                    this.nombre = "Porta-Aviones"
+                }
+
+                else -> throw IllegalArgumentException("Unexpected value: $ini")
+            }
+        }
+
+    }
 
 }
