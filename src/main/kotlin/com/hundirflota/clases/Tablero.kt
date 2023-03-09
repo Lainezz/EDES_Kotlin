@@ -137,7 +137,6 @@ class Tablero {
     /**
      * Metodo que coloca un barco verticalmente
      */
-    class Tablero {
         private fun colocarVertical(barco: Barco) {
             var rand = (0..10).random()
             var x: Int
